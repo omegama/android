@@ -14,6 +14,13 @@ public class FoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
 
-
+        Button backBtn = (Button) findViewById(R.id.backFood);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (FoodActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -14,6 +14,13 @@ public class CombosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combos);
 
-
+        Button backBtn = (Button) findViewById(R.id.backCombo);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CombosActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

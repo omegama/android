@@ -177,7 +177,7 @@
             <!--Drink Item 3 Layout cocacola 600ml Drink-->
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="137dp"
                 android:gravity="left"
                 android:orientation="vertical"
                 android:paddingBottom="30dp"

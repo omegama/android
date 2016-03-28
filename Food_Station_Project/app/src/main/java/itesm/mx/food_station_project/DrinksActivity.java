@@ -14,6 +14,13 @@ public class DrinksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drinks);
 
-
+        Button backBtn = (Button) findViewById(R.id.backDrink);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DrinksActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
