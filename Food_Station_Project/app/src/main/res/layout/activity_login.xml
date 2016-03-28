@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="itesm.mx.food_station_project.RegisterActivity">
+    tools:context="itesm.mx.food_station_project.LoginActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -46,34 +46,10 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Login"
+            android:text="Registrarme"
             android:background="@color/blue"
-            android:id="@+id/buttonLogin" />
+            android:id="@+id/buttonRegister" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1">
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recordarme"
-                android:id="@+id/switch1"
-                android:checked="true"
-                android:layout_gravity="center_vertical" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Crear cuenta"
-                android:background="@color/blue"
-                android:id="@+id/buttonGoToRegister"
-                android:layout_gravity="center_vertical" />
-
-        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Food_Station_Project</string>
+    <string name="app_name">Food Station</string>
+    <color name="blue">#3d87fc</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <style name="horizontalPadding">
+        <item name="android:layout_marginRight">100dp</item>
+    </style>
+    <style name="verticalPadding">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
 </resources>
