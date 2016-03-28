@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Mountaindew 355ml  lata"
+                    android:text="Gohan (arroz al vapor)"
                     android:id="@+id/FoodItem1_desc"
                     android:layout_below="@+id/FoodItem1"
                     android:layout_alignParentStart="true" />
@@ -76,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $15"
+                    android:text="Precio: $25"
                     android:id="@+id/FoodItem1_price"
                     android:layout_below="@+id/FoodItem1_desc"
                     android:layout_alignParentStart="true" />
@@ -100,7 +100,7 @@
                     android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
-            <!--Food Item 2 Layout cocacola lata Food-->
+            <!--Food Item 2 Layout fries Food-->
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/FoodItem2"
-                    android:src="@drawable/coke"
+                    android:src="@drawable/fries"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Coca Cola 355ml lata"
+                    android:text="Papas a la Francesa"
                     android:id="@+id/FoodItem2_desc"
                     android:layout_below="@+id/FoodItem2"
                     android:layout_alignParentStart="true" />
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $10"
+                    android:text="Precio: $20"
                     android:id="@+id/FoodItem2_price"
                     android:layout_below="@+id/FoodItem2_desc"
                     android:layout_alignParentStart="true" />
@@ -173,7 +173,7 @@
                     android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
-            <!--Food Item 3 Layout cocacola 600ml Food-->
+            <!--Food Item 3 Layout sandwich Food-->
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -189,7 +189,7 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/FoodItem3"
-                    android:src="@drawable/coke600"
+                    android:src="@drawable/sandwich"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -213,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Coca Cola de 600ml"
+                    android:text="Sandwich de jamon de pavo"
                     android:id="@+id/FoodItem3_desc"
                     android:layout_below="@+id/FoodItem3"
                     android:layout_alignParentStart="true" />
@@ -222,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $12"
+                    android:text="Precio: $25"
                     android:id="@+id/FoodItem3_price"
                     android:layout_below="@+id/FoodItem3_desc"
                     android:layout_alignParentStart="true" />
@@ -246,7 +246,7 @@
                     android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
-            <!--Food Item 4 Layout agua Food-->
+            <!--Food Item 4 Layout hotdog Food-->
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/FoodItem4"
-                    android:src="@drawable/water"
+                    android:src="@drawable/hotdog"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -286,7 +286,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Agua Natural"
+                    android:text="Hotdog"
                     android:id="@+id/FoodItem4_desc"
                     android:layout_below="@+id/FoodItem4"
                     android:layout_alignParentStart="true" />
@@ -295,7 +295,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $10"
+                    android:text="Precio: $25"
                     android:id="@+id/FoodItem4_price"
                     android:layout_below="@+id/FoodItem4_desc"
                     android:layout_alignParentStart="true" />
