@@ -1,5 +1,6 @@
 package itesm.mx.food_station_project;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Aqui hay que poner el intent para que vaya a la actividad de Food
+                Intent intent = new Intent (MenuActivity.this, FoodActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -27,6 +30,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Aqui hay que poner el intent para que vaya a la actividad de Drinks
+                Intent intent = new Intent (MenuActivity.this, DrinksActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -34,6 +39,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Aqui hay que poner el intent para que vaya a la actividad de Combos
+                Intent intent = new Intent (MenuActivity.this, CombosActivity.class);
+                startActivity(intent);
             }
         });
     }
