@@ -21,16 +21,16 @@
         android:layout_centerHorizontal="true" />
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="409dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!--Drink Item 1 Layout mountaindew Drink-->
+            <!--Drink Item 1 Layout Te helado Drink-->
             <RelativeLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="vertical"
@@ -44,11 +44,12 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/DrinkItem1"
-                    android:src="@drawable/mountaindew"
+                    android:src="@drawable/tehelado"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
-                <EditText
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
                     android:layout_width="94dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
@@ -68,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Mountaindew 355ml  lata"
+                    android:text="Te Helado Food Station"
                     android:id="@+id/DrinkItem1_desc"
                     android:layout_below="@+id/DrinkItem1"
                     android:layout_alignParentStart="true" />
@@ -77,28 +78,67 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $15"
+                    android:text="Precio: $10"
                     android:id="@+id/DrinkItem1_price"
                     android:layout_below="@+id/DrinkItem1_desc"
                     android:layout_alignParentStart="true" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/DrinkItem1_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem6"
+                    android:src="@drawable/tehelado"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem6_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem6_desc"
+                    android:layout_toEndOf="@+id/DrinkItem6"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/DrinkItem1_minusBtn"
-                    android:layout_below="@+id/DrinkItem1_plusBtn"
-                    android:layout_alignParentEnd="true" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Te Helado Negro Food Station"
+                    android:id="@+id/DrinkItem6_desc"
+                    android:layout_below="@+id/DrinkItem6"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $10"
+                    android:id="@+id/DrinkItem6_price"
+                    android:layout_below="@+id/DrinkItem6_desc"
+                    android:layout_alignParentStart="true" />
+
 
             </RelativeLayout>
             <!--Drink Item 2 Layout cocacola lata Drink-->
@@ -121,7 +161,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
-                <EditText
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
                     android:layout_width="94dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
@@ -141,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Coca Cola 355ml lata"
+                    android:text="Refresco en lata 355ml"
                     android:id="@+id/DrinkItem2_desc"
                     android:layout_below="@+id/DrinkItem2"
                     android:layout_alignParentStart="true" />
@@ -155,29 +196,12 @@
                     android:layout_below="@+id/DrinkItem2_desc"
                     android:layout_alignParentStart="true" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/DrinkItem2_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/DrinkItem2_minusBtn"
-                    android:layout_below="@+id/DrinkItem2_plusBtn"
-                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
-            <!--Drink Item 3 Layout cocacola 600ml Drink-->
+            <!--Drink Item 3 Layout Agua natural 600ml Drink-->
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="137dp"
+                android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="vertical"
                 android:paddingBottom="30dp"
@@ -190,11 +214,12 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/DrinkItem3"
-                    android:src="@drawable/coke600"
+                    android:src="@drawable/ciel600"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
-                <EditText
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
                     android:layout_width="94dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
@@ -214,7 +239,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Coca Cola de 600ml"
+                    android:text="Agua Natural 600ml"
                     android:id="@+id/DrinkItem3_desc"
                     android:layout_below="@+id/DrinkItem3"
                     android:layout_alignParentStart="true" />
@@ -223,29 +248,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $12"
+                    android:text="Precio: $6"
                     android:id="@+id/DrinkItem3_price"
                     android:layout_below="@+id/DrinkItem3_desc"
                     android:layout_alignParentStart="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/DrinkItem3_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/DrinkItem3_minusBtn"
-                    android:layout_below="@+id/DrinkItem3_plusBtn"
-                    android:layout_alignParentEnd="true" />
-
             </RelativeLayout>
             <!--Drink Item 4 Layout agua Drink-->
             <RelativeLayout
@@ -263,11 +269,12 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/DrinkItem4"
-                    android:src="@drawable/water"
+                    android:src="@drawable/ciellitro"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
-                <EditText
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
                     android:layout_width="94dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
@@ -287,7 +294,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Agua Natural"
+                    android:text="Agua Natural 1Lt."
                     android:id="@+id/DrinkItem4_desc"
                     android:layout_below="@+id/DrinkItem4"
                     android:layout_alignParentStart="true" />
@@ -301,23 +308,289 @@
                     android:layout_below="@+id/DrinkItem4_desc"
                     android:layout_alignParentStart="true" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/DrinkItem4_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
+            </RelativeLayout>
+            <!--Drink item 5-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem5"
+                    android:src="@drawable/vitaminwater"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem5_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem5_desc"
+                    android:layout_toEndOf="@+id/DrinkItem5"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/DrinkItem4_minusBtn"
-                    android:layout_below="@+id/DrinkItem4_plusBtn"
-                    android:layout_alignParentEnd="true" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Vitamin Water"
+                    android:id="@+id/DrinkItem5_desc"
+                    android:layout_below="@+id/DrinkItem5"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $22"
+                    android:id="@+id/DrinkItem5_price"
+                    android:layout_below="@+id/DrinkItem5_desc"
+                    android:layout_alignParentStart="true" />
+
+
+            </RelativeLayout>
+            <!--Drink item 6-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem7"
+                    android:src="@drawable/fuzetea"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem7_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem7_desc"
+                    android:layout_toEndOf="@+id/DrinkItem7"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Fuze Tea 600ml"
+                    android:id="@+id/DrinkItem7_desc"
+                    android:layout_below="@+id/DrinkItem7"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $15"
+                    android:id="@+id/DrinkItem7_price"
+                    android:layout_below="@+id/DrinkItem7_desc"
+                    android:layout_alignParentStart="true" />
+
+
+            </RelativeLayout>
+            <!--Drink item 5-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem8"
+                    android:src="@drawable/delvalle"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem8_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem8_desc"
+                    android:layout_toEndOf="@+id/DrinkItem8"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Jugo Del Valle"
+                    android:id="@+id/DrinkItem8_desc"
+                    android:layout_below="@+id/DrinkItem8"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $10"
+                    android:id="@+id/DrinkItem8_price"
+                    android:layout_below="@+id/DrinkItem8_desc"
+                    android:layout_alignParentStart="true" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem9"
+                    android:src="@drawable/delvallefrut"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem9_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem9_desc"
+                    android:layout_toEndOf="@+id/DrinkItem9"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Jugo Del Valle Frut"
+                    android:id="@+id/DrinkItem9_desc"
+                    android:layout_below="@+id/DrinkItem9"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $10"
+                    android:id="@+id/DrinkItem9_price"
+                    android:layout_below="@+id/DrinkItem9_desc"
+                    android:layout_alignParentStart="true" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/titleDrinkText">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:id="@+id/DrinkItem10"
+                    android:src="@drawable/powerbueno"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Spinner
+                    android:entries="@array/spinnerCantidad"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/DrinkItem10_quantity"
+                    android:text="0"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_above="@+id/DrinkItem10_desc"
+                    android:layout_toEndOf="@+id/DrinkItem10"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Powerade 600ml"
+                    android:id="@+id/DrinkItem10_desc"
+                    android:layout_below="@+id/DrinkItem10"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio: $15"
+                    android:id="@+id/DrinkItem10_price"
+                    android:layout_below="@+id/DrinkItem10_desc"
+                    android:layout_alignParentStart="true" />
+
 
             </RelativeLayout>
         </LinearLayout>
@@ -330,7 +603,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Total   "
+            android:text="   Finalizar compra   "
             android:id="@+id/totalDrink"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true" />
@@ -339,7 +612,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Atras   "
+            android:text="   Seguir comprando   "
             android:id="@+id/backDrink"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />

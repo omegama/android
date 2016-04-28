@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Welcome to"
+            android:text="Bienvenido a"
             android:id="@+id/textView" />
 
         <ImageView
@@ -32,8 +32,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Alimentos"
+            android:layout_margin="@dimen/activity_vertical_margin"
             android:background="@color/blue"
-
             android:layout_gravity="center_horizontal"
             android:id="@+id/buttonFood" />
 
@@ -41,6 +41,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Bebidas"
+            android:layout_margin="@dimen/activity_vertical_margin"
             android:background="@color/blue"
 
             android:layout_gravity="center_horizontal"
@@ -50,7 +51,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
 
-            android:text="Combos"
+            android:text="1/2 &amp; 1/2"
+            android:layout_margin="@dimen/activity_vertical_margin"
             android:background="@color/blue"
             android:layout_gravity="center_horizontal"
             android:id="@+id/buttonCombos" />

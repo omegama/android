@@ -20,235 +20,31 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ScrollView
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="400dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Gohan - Ensalada"
+        android:id="@+id/buttonGE" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!--Combo Item 1 Layout brg combo-->
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="vertical"
-                android:paddingBottom="30dp"
-                android:paddingRight="20dp"
-                android:paddingTop="20dp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/titleComboText">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Gohan - Club Sandwich"
+        android:id="@+id/buttonGS" />
 
-                <ImageView
-                    android:layout_width="200px"
-                    android:layout_height="200px"
-                    android:id="@+id/comboItem1"
-                    android:src="@drawable/brg_combo"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Ensalada - Club Sandwich"
+        android:id="@+id/buttonES" />
 
-                <EditText
-                    android:layout_width="94dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:ems="10"
-                    android:id="@+id/comboItem1_quantity"
-                    android:text="0"
-                    android:gravity="center"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_above="@+id/comboItem1_desc"
-                    android:layout_toEndOf="@+id/comboItem1"
-                    android:layout_marginBottom="24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Hamburguesa + Papas Fritas + Refresco"
-                    android:id="@+id/comboItem1_desc"
-                    android:layout_below="@+id/comboItem1"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $75"
-                    android:id="@+id/comboItem1_price"
-                    android:layout_below="@+id/comboItem1_desc"
-                    android:layout_alignParentStart="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/comboItem1_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/comboItem1_minusBtn"
-                    android:layout_below="@+id/comboItem1_plusBtn"
-                    android:layout_alignParentEnd="true" />
-
-            </RelativeLayout>
-            <!--Combo Item 2 Layout taco combo-->
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="vertical"
-                android:paddingBottom="30dp"
-                android:paddingRight="20dp"
-                android:paddingTop="20dp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/titleComboText">
-
-                <ImageView
-                    android:layout_width="200px"
-                    android:layout_height="200px"
-                    android:id="@+id/comboItem2"
-                    android:src="@drawable/taco_combo"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
-
-                <EditText
-                    android:layout_width="94dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:ems="10"
-                    android:id="@+id/comboItem2_quantity"
-                    android:text="0"
-                    android:gravity="center"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_above="@+id/comboItem2_desc"
-                    android:layout_toEndOf="@+id/comboItem2"
-                    android:layout_marginBottom="24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Tacos + Refresco"
-                    android:id="@+id/comboItem2_desc"
-                    android:layout_below="@+id/comboItem2"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $40"
-                    android:id="@+id/comboItem2_price"
-                    android:layout_below="@+id/comboItem2_desc"
-                    android:layout_alignParentStart="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/comboItem2_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/comboItem2_minusBtn"
-                    android:layout_below="@+id/comboItem2_plusBtn"
-                    android:layout_alignParentEnd="true" />
-
-            </RelativeLayout>
-            <!--Combo Item 3 Layout chikn combo-->
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="vertical"
-                android:paddingBottom="30dp"
-                android:paddingRight="20dp"
-                android:paddingTop="20dp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/titleComboText">
-
-                <ImageView
-                    android:layout_width="200px"
-                    android:layout_height="200px"
-                    android:id="@+id/comboItem3"
-                    android:src="@drawable/chicken_combo"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
-
-                <EditText
-                    android:layout_width="94dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:ems="10"
-                    android:id="@+id/comboItem3_quantity"
-                    android:text="0"
-                    android:gravity="center"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_above="@+id/comboItem3_desc"
-                    android:layout_toEndOf="@+id/comboItem3"
-                    android:layout_marginBottom="24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Pollo Frito Bisquet Refresco y      Frijoles"
-                    android:id="@+id/comboItem3_desc"
-                    android:layout_below="@+id/comboItem3"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Precio: $150"
-                    android:id="@+id/comboItem3_price"
-                    android:layout_below="@+id/comboItem3_desc"
-                    android:layout_alignParentStart="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     +     "
-                    android:id="@+id/comboItem3_plusBtn"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="     -      "
-                    android:id="@+id/comboItem3_minusBtn"
-                    android:layout_below="@+id/comboItem3_plusBtn"
-                    android:layout_alignParentEnd="true" />
-
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -257,7 +53,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Total   "
+            android:text="   Finalizar compra   "
             android:id="@+id/totalCombo"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true" />
@@ -266,7 +62,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Atras   "
+            android:text="   Seguir comprando   "
             android:id="@+id/backCombo"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />

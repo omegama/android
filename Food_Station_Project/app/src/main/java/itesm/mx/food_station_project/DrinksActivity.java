@@ -18,8 +18,16 @@ public class DrinksActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DrinksActivity.this, MenuActivity.class);
-                startActivity(intent);
+                Intent goToMenu = new Intent(DrinksActivity.this, MenuActivity.class);
+                startActivity(goToMenu);
+            }
+        });
+        Button totalBtn = (Button) findViewById(R.id.totalDrink);
+        totalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToTotal = new Intent(DrinksActivity.this, CheckoutActivity.class);
+                startActivity(goToTotal);
             }
         });
     }

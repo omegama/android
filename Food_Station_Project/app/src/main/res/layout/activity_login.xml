@@ -29,6 +29,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:inputType="textEmailAddress"
+            android:hint="Nombre"
+            android:ems="10"
+            android:id="@+id/editNombre" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textEmailAddress"
             android:hint="E-mail"
             android:ems="10"
             android:id="@+id/editText" />
@@ -38,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:inputType="textPassword"
-            android:hint="Password"
+            android:hint="Contraseña"
             android:ems="10"
             android:id="@+id/editText2" />
 

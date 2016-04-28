@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FoodActivity extends AppCompatActivity {
 
@@ -18,8 +19,35 @@ public class FoodActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (FoodActivity.this, MenuActivity.class);
+                Intent intent = new Intent(FoodActivity.this, MenuActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Button totalBtn = (Button) findViewById(R.id.totalFood);
+        totalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        ImageButton gohanBtn = (ImageButton)findViewById(R.id.gohanButton);
+        gohanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToGohan = new Intent (FoodActivity.this, GohanActivity.class);
+                startActivity(goToGohan);
+            }
+        });
+
+        ImageButton saladBtn = (ImageButton)findViewById(R.id.saladButton);
+        saladBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToSalad = new Intent(FoodActivity.this, SaladActivity.class);
+                startActivity(goToSalad);
             }
         });
     }
