@@ -45,21 +45,21 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tampico"
+                        android:text="Tampico $32"
                         android:id="@+id/radioTampico"
                         android:checked="false" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Verde"
+                        android:text="Verde $30"
                         android:id="@+id/radioVerde"
                         android:checked="false" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="California"
+                        android:text="California $32"
                         android:id="@+id/radioCalifornia"
                         android:checked="false" />
 
@@ -74,7 +74,7 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nori"
+                        android:text="Nori $28"
                         android:id="@+id/radioNori"
                         android:paddingRight="30dp"
                         android:checked="false" />
@@ -82,7 +82,7 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Teriyaki"
+                        android:text="Teriyaki $35"
                         android:id="@+id/radioTeriyaki"
                         android:checked="false" />
                 </LinearLayout>
@@ -123,7 +123,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Queso Crema"
-                    android:id="@+id/checkCrema" />
+                    android:id="@+id/checkCrema"
+                    android:checked="false" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -141,7 +142,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pepino"
-                    android:id="@+id/checkPepino" />
+                    android:id="@+id/checkPepino"
+                    android:checked="false" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -205,8 +207,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   Finalizar compra   "
-                android:id="@+id/totalFood"
+                android:text="   Regresar   "
+                android:id="@+id/backFood"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true" />
 
@@ -214,8 +216,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   Seguir comprando   "
-                android:id="@+id/backFood"
+                android:text="   Agregar producto   "
+                android:id="@+id/totalFood"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>

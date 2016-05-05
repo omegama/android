@@ -45,14 +45,14 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mediana"
+                    android:text="Mediana $35"
                     android:id="@+id/radioMediana"
                     android:checked="false" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Grande"
+                    android:text="Grande $48"
                     android:id="@+id/radioGrande"
                     android:checked="false" />
             </LinearLayout>
@@ -66,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Proteina"
+                    android:text="Proteina (1)"
                     android:id="@+id/textView2" />
 
                 <LinearLayout
@@ -144,7 +144,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="Barra Fría"
+                            android:text="Barra Fría (4)"
                             android:id="@+id/textBarra" />
 
                         <CheckBox
@@ -254,7 +254,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Crutones o Frituras"
+                android:text="Crutones o Frituras(1)"
                 android:id="@+id/textView4" />
 
             <LinearLayout
@@ -290,8 +290,8 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Finalizar compra   "
-            android:id="@+id/totalFood"
+            android:text="   Regresar   "
+            android:id="@+id/backFood"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true" />
 
@@ -299,8 +299,8 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Seguir comprando   "
-            android:id="@+id/backFood"
+            android:text="   Agregar producto   "
+            android:id="@+id/totalFood"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>

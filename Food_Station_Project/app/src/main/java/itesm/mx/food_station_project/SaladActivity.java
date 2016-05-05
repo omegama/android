@@ -1,38 +1,25 @@
 package itesm.mx.food_station_project;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class SaladActivity extends AppCompatActivity {
 
     RadioButton med, grande, quesoP, quesoM, pollo, surimi, atun, jamon, salchicha, cruton, frit;
+    String ordenEnsalada = "";
+    Integer precioEnsalada = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salad);
-        Button backBtn = (Button) findViewById(R.id.backFood);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SaladActivity.this, MenuActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button totalBtn = (Button) findViewById(R.id.totalFood);
-        totalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToCheckout = new Intent(SaladActivity.this, CheckoutActivity.class);
-                startActivity(goToCheckout);
-            }
-        });
-
 
         med = (RadioButton)findViewById(R.id.radioMediana);
         grande = (RadioButton)findViewById(R.id.radioGrande);
@@ -162,6 +149,69 @@ public class SaladActivity extends AppCompatActivity {
                 frit.setChecked(true);
             }
         });
+
+        Button backBtn = (Button) findViewById(R.id.backFood);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SaladActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button totalBtn = (Button) findViewById(R.id.totalFood);
+        totalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToCheckout = new Intent(SaladActivity.this, CheckoutActivity.class);
+                if((med.isChecked() == true || grande.isChecked() == true) && (quesoP.isChecked() == true || quesoM.isChecked() == true || pollo.isChecked() == true || surimi.isChecked() == true || atun.isChecked() == true || jamon.isChecked() == true ||salchicha.isChecked() == true)
+                       && (cruton.isChecked() == true || frit.isChecked() == true) ){
+
+                    if(med.isChecked() == true){
+                        ordenEnsalada += "Ensalada mediana";
+                        precioEnsalada += 35;
+                    }
+                    if(grande.isChecked() == true){
+                        ordenEnsalada += "Ensalada grande";
+                        precioEnsalada += 48;
+                    }
+
+                    //int precioParse = Integer.parseInt(precioEnsalada.toString());
+
+                    //goToCheckout.putExtra("orderSalad", ordenEnsalada);
+                    //goToCheckout.putExtra("costSalad", precioParse);
+
+                    SharedPreferences saveOrder = getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = saveOrder.edit();
+                    editor.putString("saveOrderSalad", ordenEnsalada);
+                    editor.putString("saveCostSalad", String.valueOf(precioEnsalada));
+                    editor.apply();
+
+                    Toast.makeText(SaladActivity.this,"Producto agregado", Toast.LENGTH_LONG).show();
+
+
+                    startActivity(goToCheckout);
+
+
+                } else if (med.isChecked() == false && grande.isChecked() == false){
+                    Context context = getApplicationContext();
+                    Toast.makeText(context, "Seleccione el tamaño de su ensalada", Toast.LENGTH_LONG).show();
+                    return;
+
+                } else if ((med.isChecked() == true || grande.isChecked() == true) && (quesoP.isChecked() == false && quesoM.isChecked() == false && pollo.isChecked() == false && surimi.isChecked() == false && atun.isChecked() == false && jamon.isChecked() == false && salchicha.isChecked() == false)) {
+                    Context context = getApplicationContext();
+                    Toast.makeText(context, "Seleccione la proteína para su ensalada", Toast.LENGTH_LONG).show();
+                    return;
+                } else {
+                    Context context = getApplicationContext();
+                    Toast.makeText(context, "Elija si desea crutones o frituras", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        });
+
+
+
 
     }
 }

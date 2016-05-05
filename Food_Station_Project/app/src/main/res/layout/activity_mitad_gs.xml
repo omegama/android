@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Gohan"
+            android:text="Gohan (1 estilo)"
             android:id="@+id/textTituloGohan" />
 
         <RadioGroup
@@ -85,6 +85,23 @@
                 android:text="Club Sandwich "
                 android:id="@+id/radioClub"
                 android:checked="true" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:id="@+id/buttonCancel" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar"
+                    android:id="@+id/buttonAdd" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

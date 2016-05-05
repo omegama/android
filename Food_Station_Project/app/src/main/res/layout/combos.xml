@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Combos"
+        android:text="Combos $50"
         android:id="@+id/titleComboText"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
@@ -53,18 +53,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Finalizar compra   "
-            android:id="@+id/totalCombo"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="   Seguir comprando   "
+            android:text="   Regresar   "
             android:id="@+id/backCombo"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
+
 </LinearLayout>

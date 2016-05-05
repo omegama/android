@@ -24,14 +24,6 @@ public class FoodActivity extends AppCompatActivity {
             }
         });
 
-        Button totalBtn = (Button) findViewById(R.id.totalFood);
-        totalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
 
         ImageButton gohanBtn = (ImageButton)findViewById(R.id.gohanButton);
         gohanBtn.setOnClickListener(new View.OnClickListener() {

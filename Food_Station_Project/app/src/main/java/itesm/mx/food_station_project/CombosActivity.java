@@ -2,6 +2,7 @@ package itesm.mx.food_station_project;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,12 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CombosActivity extends FragmentActivity implements MitadGEActivity.CustomDialogListener, MitadGSActivity.CustomDialogListener, MitadESActivity.CustomDialogListener {
+public class CombosActivity extends FragmentActivity {
     Context context;
-    android.app.FragmentTransaction createFragment;
-    MitadGEActivity gohanEnsaladaFragment;
-    MitadGSActivity gohanSandwichFragment;
-    MitadESActivity sandwichEnsaladaFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +28,6 @@ public class CombosActivity extends FragmentActivity implements MitadGEActivity.
 
         Button backBtn = (Button) findViewById(R.id.backCombo);
         Button mitadGE = (Button)findViewById(R.id.buttonGE);
-        Button totalBtn = (Button) findViewById(R.id.totalCombo);
         Button mitadGS = (Button)findViewById(R.id.buttonGS);
         Button mitadES = (Button)findViewById(R.id.buttonES);
 
@@ -43,50 +39,32 @@ public class CombosActivity extends FragmentActivity implements MitadGEActivity.
             }
         });
 
-        totalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToTotal = new Intent(CombosActivity.this, CheckoutActivity.class);
-                startActivity(goToTotal);
-            }
-        });
-
         mitadGE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createFragment = getFragmentManager().beginTransaction();
-                gohanEnsaladaFragment = new MitadGEActivity();
-                gohanEnsaladaFragment.show(createFragment, "dialog");
+                FragmentManager manager = getFragmentManager();
+                MitadGEActivity dialogGE = new MitadGEActivity();
+                dialogGE.show(manager, "dialogGE");
             }
         });
 
         mitadGS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createFragment = getFragmentManager().beginTransaction();
-                gohanSandwichFragment = new MitadGSActivity();
-                gohanSandwichFragment.show(createFragment, "dialog");
+                FragmentManager manager = getFragmentManager();
+                MitadGSActivity dialogGS = new MitadGSActivity();
+                dialogGS.show(manager, "dialogGS");
             }
         });
 
         mitadES.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createFragment = getFragmentManager().beginTransaction();
-                sandwichEnsaladaFragment = new MitadESActivity();
-                sandwichEnsaladaFragment.show(createFragment, "dialog");
+                FragmentManager manager = getFragmentManager();
+                MitadESActivity dialogES = new MitadESActivity();
+                dialogES.show(manager, "dialogES");
             }
         });
 
     }
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        /*
-        EditText userEditText = (EditText)dialog.getDialog().findViewById(R.id.username);
-        String username = userEditText.getText().toString();
-        Intent newIntent = new Intent(getApplicationContext(), CheckoutActivity.class);
-        newIntent.putExtra("name", username);
-        startActivity(newIntent);
-        */
-    }
-
 }
