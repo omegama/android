@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class DrinksActivity extends AppCompatActivity {
 
     Spinner teHelado, teOscuro, refresco, agua6, agua1, vitamin, fuze, delValle, valleFrut, power;
+    String orderMail = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,34 +51,54 @@ public class DrinksActivity extends AppCompatActivity {
 
                 int totalDrink = 0;
                 if(Integer.parseInt(teHelado.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(teHelado.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(teHelado.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Te helado\n";
                 }
                 if(Integer.parseInt(teOscuro.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(teOscuro.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(teOscuro.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Te oscuro\n";
                 }
                 if(Integer.parseInt(refresco.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(agua6.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(refresco.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Refresco\n";
                 }
                 if(Integer.parseInt(agua6.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(agua6.getSelectedItem().toString()) * 6;
+                    int cant = Integer.parseInt(agua6.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Agua de 600ml\n";
                 }
                 if(Integer.parseInt(agua1.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(agua1.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(agua1.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Agua de 1Lt\n";
                 }
                 if(Integer.parseInt(vitamin.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(vitamin.getSelectedItem().toString()) * 22;
+                    int cant = Integer.parseInt(vitamin.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Vitamin Water\n";
                 }
                 if(Integer.parseInt(fuze.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(fuze.getSelectedItem().toString()) * 15;
+                    int cant = Integer.parseInt(fuze.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Fuze Tea\n";
                 }
                 if(Integer.parseInt(delValle.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(delValle.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(delValle.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Jugo del Valle\n";
                 }
                 if(Integer.parseInt(valleFrut.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(valleFrut.getSelectedItem().toString()) * 10;
+                    int cant = Integer.parseInt(valleFrut.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Jugo del valle Frut\n";
                 }
                 if(Integer.parseInt(power.getSelectedItem().toString()) > 0){
-                    totalDrink += Integer.parseInt(power.getSelectedItem().toString()) * 15;
+                    int cant = Integer.parseInt(power.getSelectedItem().toString());
+                    totalDrink += cant * 10;
+                    orderMail = cant  + " - Powerade\n";
                 }
 
                 if(Integer.parseInt(power.getSelectedItem().toString()) <=0 && Integer.parseInt(valleFrut.getSelectedItem().toString()) <=0
@@ -92,6 +113,7 @@ public class DrinksActivity extends AppCompatActivity {
 
                 editor.putString("saveDrinks", String.valueOf(totalDrink));
                 editor.putString("saveTextDrinks", "Bebidas");
+                editor.putString("saveMailDrinks", orderMail);
                 editor.apply();
 
                 Toast.makeText(DrinksActivity.this, "Producto agregado", Toast.LENGTH_LONG).show();

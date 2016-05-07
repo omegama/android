@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +26,13 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
     RadioButton tampicoR, caliR, noriR, teriR, verdeR, quesoP, quesoM, pollo, surimi, atun, jamon, salchicha, crutones, frituras;
     CheckBox pepino, zana, acei, manz, pimi, jito, champi, jica, alfalfa, elote, nuez, aran;
     Button cancel, add;
-
+    SharedPreferences sendCombo;
+    SharedPreferences.Editor editor;
+    String comboOrder, ordenMail = "";
+    Integer comboCost;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
         View view = inflater.inflate(R.layout.activity_mitad_ge, null);
-
 
         tampicoR = (RadioButton)view.findViewById(R.id.radioTampico);
         caliR = (RadioButton)view.findViewById(R.id.radioCali);
@@ -75,34 +78,161 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
+                int acumBarraFria = 0;
 
+                if(pepino.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(zana.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(acei.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(manz.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(pimi.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(jito.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(champi.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(jica.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(alfalfa.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(elote.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(nuez.isChecked() == true){
+                    acumBarraFria ++;
+                }
+                if(aran.isChecked() == true){
+                    acumBarraFria ++;
+                }
 
                 if(tampicoR.isChecked() == true || verdeR.isChecked() == true || noriR.isChecked() == true || teriR.isChecked() == true || caliR.isChecked() == true){
 
+                    if (quesoP.isChecked() == true || quesoM.isChecked() == true || pollo.isChecked() == true || surimi.isChecked() == true || atun.isChecked() == true || jamon.isChecked() == true || salchicha.isChecked() == true) {
+
+                        if(acumBarraFria == 4) {
+
+                            if (crutones.isChecked() == true || frituras.isChecked() == true) {
+                                Intent goToCheckout = new Intent(getContext(), CheckoutActivity.class);
+
+                                if(tampicoR.isChecked() == true){
+                                    ordenMail += "Mitad gohan tampico\n\n";
+                                }
+                                if(verdeR.isChecked() == true){
+                                    ordenMail += "Mitad gohan verde\n\n";
+                                }
+                                if(noriR.isChecked() == true){
+                                    ordenMail += "Mitad gohan nori\n\n";
+                                }
+                                if(teriR.isChecked() == true){
+                                    ordenMail += "Mitad gohan teriyaki\n\n";
+                                }
+                                if(caliR.isChecked() == true){
+                                    ordenMail += "Mitad gohan california\n\n";
+                                }
+
+                                ordenMail += "Mitad Ensalada\n";
+                                //Ensalada para mail
+                                if(quesoP.isChecked() == true){
+                                    ordenMail += "Queso Panela\n";
+                                }
+                                if(quesoM.isChecked() == true){
+                                    ordenMail += "Queso Manchego\n";
+                                }
+                                if(pollo.isChecked() == true){
+                                    ordenMail += "Pollo\n";
+                                }
+                                if(surimi.isChecked() == true){
+                                    ordenMail += "Surimi\n";
+                                }
+                                if(atun.isChecked() == true){
+                                    ordenMail += "Atún\n";
+                                }
+                                if(jamon.isChecked() == true){
+                                    ordenMail += "Jamón\n";
+                                }
+                                if(salchicha.isChecked() == true){
+                                    ordenMail += "Salchicha\n";
+                                }
+
+                                //Tomar los ingredientes de barra fria para el mail
+                                if(pepino.isChecked() == true){
+                                    ordenMail += "Pepino\n";
+                                }
+                                if(zana.isChecked() == true){
+                                    ordenMail += "Zanahoria\n";
+                                }
+                                if(acei.isChecked() == true){
+                                    ordenMail += "Aceituna\n";
+                                }
+                                if(manz.isChecked() == true){
+                                    ordenMail += "Manzana\n";
+                                }
+                                if(pimi.isChecked() == true){
+                                    ordenMail += "Pimiento\n";
+                                }
+                                if(jito.isChecked() == true){
+                                    ordenMail += "Jitomate\n";
+                                }
+                                if(champi.isChecked() == true){
+                                    ordenMail += "Champiñón\n";
+                                }
+                                if(jica.isChecked() == true){
+                                    ordenMail += "Jicama\n";
+                                }
+                                if(alfalfa.isChecked() == true){
+                                    ordenMail += "G. de Alfalfa\n";
+                                }
+                                if(elote.isChecked() == true){
+                                    ordenMail += "Elote\n";
+                                }
+                                if(nuez.isChecked() == true){
+                                    ordenMail += "Nuez\n";
+                                }
+                                if(aran.isChecked() == true){
+                                    ordenMail += "Arándano\n";
+                                }
+
+                                //Tomar el complemento para el mail
+                                if(crutones.isChecked() == true){
+                                    ordenMail += "Crutones\n\n";
+                                }
+                                if(frituras.isChecked() == true){
+                                    ordenMail += "Frituras\n\n";
+                                }
 
 
-                    if(quesoP.isChecked() == true || quesoM.isChecked() == true || pollo.isChecked() == true || surimi.isChecked() == true || atun.isChecked() == true || jamon.isChecked() == true ||salchicha.isChecked() == true){
+                                comboOrder = "Mitad gohan - ensalada";
+                                comboCost = 50;
+                                sendCombo = getActivity().getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
+                                editor = sendCombo.edit();
+                                editor.putString("GEorden", comboOrder);
+                                editor.putString("GEcosto", String.valueOf(comboCost));
+                                editor.putString("mailCombo1", ordenMail);
+                                editor.apply();
+                                Toast.makeText(getActivity(), "Producto agregado", Toast.LENGTH_LONG).show();
 
-                        if(crutones.isChecked() == true || frituras.isChecked() == true){
-                            Intent goToCheckout = new Intent(getContext(), CheckoutActivity.class);
-
-                            /*
-                            SharedPreferences saveOrder = getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = saveOrder.edit();
-
-                            editor.putString("saveOrder", ordenGohan);
-                            editor.putString("saveCost", String.valueOf(costoGohan));
-                            editor.apply();
-                            */
-
-                            startActivity(goToCheckout);
-                            //Enviar la información
-                        }else {
-                            Toast.makeText(getContext(), "Seleccione crutones o frituras", Toast.LENGTH_LONG).show();
+                                startActivity(goToCheckout);
+                            } else {
+                                Toast.makeText(getContext(), "Seleccione crutones o frituras", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "Debe seleccionar 4 ingredientes de barra fría", Toast.LENGTH_LONG).show();
                             return;
                         }
-
-                    }else{
+                    } else {
                         Toast.makeText(getContext(), "Seleccione una proteina", Toast.LENGTH_LONG).show();
                         return;
                     }

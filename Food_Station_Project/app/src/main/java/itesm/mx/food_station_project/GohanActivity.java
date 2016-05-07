@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class GohanActivity extends AppCompatActivity {
 
     RadioButton tampico, verde, california, nori, teri;
-    String ordenGohan;
+    String ordenGohan, ordenMail = "";
     Integer costoGohan, costoIExtras;
     CheckBox quesoC, surimi, chipotle, californiaCheck, tampicoCheck, pollo, atun, aguacate, pepino, teriyakiCheck, noriCheck;
 
@@ -121,57 +121,73 @@ public class GohanActivity extends AppCompatActivity {
                     if(tampico.isChecked() == true){
                         ordenGohan += "Gohan tampico";
                         costoGohan += 32;
+                        ordenMail += "Gohan tampico\n";
                     }
                     if(verde.isChecked() == true){
                         ordenGohan +="Gohan verde";
                         costoGohan += 30;
+                        ordenMail += "Gohan verde\n";
                     }
                     if(california.isChecked() == true){
                         ordenGohan +="Gohan california";
                         costoGohan += 32;
+                        ordenMail += "Gohan california\n";
                     }
                     if(nori.isChecked() == true){
                         ordenGohan +="Gohan Nori";
                         costoGohan += 28;
+                        ordenMail += "Gohan nori\n";
                     }
                     if(teri.isChecked() == true){
                         ordenGohan +="Gohan teriyaki";
                         costoGohan += 35;
+                        ordenMail += "Gohan teriyaki\n";
                     }
 
                     if(quesoC.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Queso crema extra\n";
                     }
                     if(chipotle.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Chipotle extra\n";
                     }
                     if(aguacate.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Aguacate extra\n";
                     }
                     if(pepino.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Pepino extra\n";
                     }
                     if(teriyakiCheck.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Salsa teriyaki extra\n";
                     }
                     if(noriCheck.isChecked() == true){
                         costoIExtras +=5;
+                        ordenMail += "Nori extra\n";
                     }
 
                     if(surimi.isChecked() == true){
                         costoIExtras +=8;
+                        ordenMail += "Surimi extra\n";
                     }
                     if(californiaCheck.isChecked() == true){
                         costoIExtras +=8;
+                        ordenMail += "California extra\n";
                     }
                     if(tampicoCheck.isChecked() == true){
                         costoIExtras +=8;
+                        ordenMail += "Tampico extra\n";
                     }
                     if(pollo.isChecked() == true){
                         costoIExtras +=8;
+                        ordenMail += "Pollo extra\n";
                     }
                     if(atun.isChecked() == true){
                         costoIExtras +=8;
+                        ordenMail += "Atún extra\n";
                     }
 
 
@@ -183,6 +199,8 @@ public class GohanActivity extends AppCompatActivity {
 
                     editor.putString("saveIngredients", "I. Extras");
                     editor.putString("saveIngredientsCost", String.valueOf(costoIExtras));
+                    //Aqui se manda la orden para el mail al checkout
+                    editor.putString("saveMailGohan", ordenMail);
 
                     editor.apply();
 

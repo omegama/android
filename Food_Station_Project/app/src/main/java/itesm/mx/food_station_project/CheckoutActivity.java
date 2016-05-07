@@ -17,8 +17,9 @@ public class CheckoutActivity extends AppCompatActivity {
 
     Button continueBtn, payBtn, eraseBtn;
     TextView ordenGohan, totalOrden, costoGohan;
-    String extraGohan, extraSalad, textoBebidas, textoIExtras;
-    Integer extraCostoGohan, extraCostoSalad, extraBebidas, costoIExtras;
+    String extraGohan, extraSalad, textoBebidas, textoIExtras, textoGE, textoES, textoGS;
+    String mailGohan, mailSalad, mailDrinks, mailCombo1, mailCombo2, mailCombo3;
+    Integer extraCostoGohan, extraCostoSalad, extraBebidas, costoIExtras, costoGE, costoES, costoGS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,26 @@ public class CheckoutActivity extends AppCompatActivity {
         extraSalad = saveOrder.getString("saveOrderSalad", "");
         extraCostoSalad = Integer.parseInt(saveOrder.getString("saveCostSalad", "0"));
 
+        textoGE = saveOrder.getString("GEorden", "");
+        costoGE = Integer.parseInt(saveOrder.getString("GEcosto", "0"));
+
+        textoES = saveOrder.getString("ESorden", "");
+        costoES = Integer.parseInt(saveOrder.getString("EScosto", "0"));
+
+        textoGS = saveOrder.getString("GSorden", "");
+        costoGS = Integer.parseInt(saveOrder.getString("GScosto", "0"));
+
+        //AQUI RECIBE LAS ORDENES PARA EL MAIL...
+        mailGohan = saveOrder.getString("saveMailGohan", "");
+        mailSalad = saveOrder.getString("saveMailSalad", "");
+        mailDrinks = saveOrder.getString("saveMailDrinks", "");
+        mailCombo1 = saveOrder.getString("mailCombo1", "");
+        mailCombo2 = saveOrder.getString("mailCombo2", "");
+        mailCombo3 = saveOrder.getString("mailCombo3", "");
+
+
+
+
 
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +83,7 @@ public class CheckoutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Enviar a la API de paypal para realizar pago
 
-                //Limpia la orden al ir a PayPal
+                //Limpia la orden al ir a PayPal chanse esto no es necesario aun, no se como funcione el mail
                 context.getSharedPreferences("orderInfo", 0).edit().clear().commit();
                 Toast.makeText(context, "Gracias por su compra", Toast.LENGTH_LONG).show();
 
@@ -82,11 +103,11 @@ public class CheckoutActivity extends AppCompatActivity {
         });
 
         //Calculo del total de la orden
-        Integer ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras;
+        Integer ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras + costoGE + costoES + costoGS;
 
         //Impresion de elementos en la orden
-        costoGohan.setText("$" + extraCostoGohan.toString() + "\n$" + costoIExtras.toString()+ "\n$" + extraCostoSalad.toString() + "\n$" + extraBebidas.toString());
-        ordenGohan.setText(extraGohan + "\n" + textoIExtras +  "\n" + extraSalad + "\n" + textoBebidas  + "\n" );
+        costoGohan.setText("$" + extraCostoGohan.toString() + "\n$" + costoIExtras.toString()+ "\n$" + extraCostoSalad.toString() + "\n$" + extraBebidas.toString() + "\n$" + costoGE.toString() + "\n$" + costoES.toString() + "\n$" + costoGS.toString());
+        ordenGohan.setText(extraGohan + "\n" + textoIExtras +  "\n" + extraSalad + "\n" + textoBebidas  + "\n" + textoGE + "\n" + textoES + "\n" + textoGS + "\n" );
         totalOrden.setText("$" + ordenTotal.toString());
     }
 }
