@@ -8,18 +8,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="itesm.mx.food_station_project.LoginActivity"
     android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Alimentos"
-        android:id="@+id/titleDrinkText"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="35dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -27,35 +26,50 @@
         android:layout_height="match_parent"
         android:weightSum="1">
 
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/gohan"
-            android:background="@color/blue"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:layout_gravity="center"
-            android:id="@+id/gohanButton" />
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:text="Gohan"
+            android:id="@+id/gohanButton"
+            android:layout_margin="15dp"
+            android:layout_gravity="center" />
 
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/salad2"
-            android:background="@color/blue"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:id="@+id/saladButton" />
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:text="Ensalada"
+            android:layout_margin="15dp"
+            android:id="@+id/saladButton"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:text="Mitades"
+            android:layout_margin="15dp"
+            android:id="@+id/buttonCombo"
+            android:layout_gravity="center" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
+            <ImageButton
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   Regresar   "
+                android:src="@drawable/back_white"
                 android:id="@+id/backFood"
-                android:layout_centerVertical="true"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true" />
 
         </RelativeLayout>

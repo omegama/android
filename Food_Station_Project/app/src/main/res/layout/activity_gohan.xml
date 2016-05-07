@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="itesm.mx.food_station_project.GohanActivity">
 
     <LinearLayout
@@ -18,10 +19,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Gohan"
             android:layout_gravity="center"
-            android:id="@+id/title" />
+            android:textStyle="bold"
+            android:textSize="25dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -203,20 +204,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
+            <ImageButton
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   Regresar   "
+                android:src="@drawable/back_white"
                 android:id="@+id/backFood"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true" />
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
+            <ImageButton
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   Agregar producto   "
+                android:src="@drawable/add_white"
                 android:id="@+id/totalFood"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true" />

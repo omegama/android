@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="itesm.mx.food_station_project.LoginActivity">
 
     <TextView
@@ -496,7 +497,7 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/DrinkItem9"
-                    android:src="@drawable/delvallefrut"
+                    android:src="@drawable/water"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -552,7 +553,7 @@
                     android:layout_width="200px"
                     android:layout_height="200px"
                     android:id="@+id/DrinkItem10"
-                    android:src="@drawable/power"
+                    android:src="@drawable/water"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -599,22 +600,23 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Regresar   "
+            android:src="@drawable/back_white"
             android:id="@+id/backDrink"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="   Agregar producto   "
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:src="@drawable/add_white"
             android:id="@+id/totalDrink"
-            android:layout_centerVertical="true"
+            android:layout_marginEnd="41dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 

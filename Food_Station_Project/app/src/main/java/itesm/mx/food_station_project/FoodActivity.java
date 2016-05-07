@@ -15,7 +15,7 @@ public class FoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
 
-        Button backBtn = (Button) findViewById(R.id.backFood);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backFood);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +25,7 @@ public class FoodActivity extends AppCompatActivity {
         });
 
 
-        ImageButton gohanBtn = (ImageButton)findViewById(R.id.gohanButton);
+        Button gohanBtn = (Button)findViewById(R.id.gohanButton);
         gohanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,12 +34,21 @@ public class FoodActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton saladBtn = (ImageButton)findViewById(R.id.saladButton);
+        Button saladBtn = (Button)findViewById(R.id.saladButton);
         saladBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent goToSalad = new Intent(FoodActivity.this, SaladActivity.class);
                 startActivity(goToSalad);
+            }
+        });
+
+        Button comboButton = (Button)findViewById(R.id.buttonCombo);
+        comboButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToCombo = new Intent(FoodActivity.this, CombosActivity.class);
+                startActivity(goToCombo);
             }
         });
     }

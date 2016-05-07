@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
 
     RadioButton tampicoR, caliR, noriR, teriR, verdeR, quesoP, quesoM, pollo, surimi, atun, jamon, salchicha, crutones, frituras;
     CheckBox pepino, zana, acei, manz, pimi, jito, champi, jica, alfalfa, elote, nuez, aran;
-    Button cancel, add;
+    ImageButton cancel, add;
     SharedPreferences sendCombo;
     SharedPreferences.Editor editor;
     String comboOrder, ordenMail = "";
@@ -63,17 +64,12 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
         nuez = (CheckBox)view.findViewById(R.id.checkNu);
         aran = (CheckBox)view.findViewById(R.id.checkAra);
 
-        cancel = (Button)view.findViewById(R.id.buttonCancel);
-        add  = (Button)view.findViewById(R.id.buttonAdd);
+        cancel = (ImageButton)view.findViewById(R.id.buttonCancel);
+        add  = (ImageButton)view.findViewById(R.id.buttonAdd);
 
 
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        cancel.setOnClickListener(this);
         add.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
@@ -255,6 +251,8 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.buttonCancel) {
             dismiss();
+        } else {
+            //boton de agregar producto
         }
     }
 }

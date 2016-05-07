@@ -16,13 +16,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MitadGSActivity extends DialogFragment implements View.OnClickListener {
 
         RadioButton tampicoR, caliR, noriR, teriR, verdeR, clubR;
-        Button cancel, add;
+        ImageButton cancel, add;
         EditText clubSpec;
         SharedPreferences sendCombo;
         SharedPreferences.Editor editor;
@@ -42,8 +43,8 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
         clubR = (RadioButton)view.findViewById(R.id.radioClub);
         clubSpec = (EditText)view.findViewById(R.id.clubEspecificacion);
 
-        cancel = (Button)view.findViewById(R.id.buttonCancel);
-        add  = (Button)view.findViewById(R.id.buttonAdd);
+        cancel = (ImageButton)view.findViewById(R.id.buttonCancel);
+        add  = (ImageButton)view.findViewById(R.id.buttonAdd);
 
         cancel.setOnClickListener(this);
     add.setOnClickListener(new View.OnClickListener() {

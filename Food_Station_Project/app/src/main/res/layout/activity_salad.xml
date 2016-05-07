@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="itesm.mx.food_station_project.SaladActivity">
 
     <ScrollView
@@ -24,10 +25,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Ensalada"
-                android:id="@+id/textSalad" />
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="25dp"  />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -286,20 +287,20 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Regresar   "
+            android:src="@drawable/back_white"
             android:id="@+id/backFood"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Agregar producto   "
+            android:src="@drawable/add_white"
             android:id="@+id/totalFood"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />

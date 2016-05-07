@@ -10,12 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class CheckoutActivity extends AppCompatActivity {
 
-    Button continueBtn, payBtn, eraseBtn;
+    ImageButton continueBtn, eraseBtn;
+    Button payBtn;
     TextView ordenGohan, totalOrden, costoGohan;
     String extraGohan, extraSalad, textoBebidas, textoIExtras, textoGE, textoES, textoGS;
     String mailGohan, mailSalad, mailDrinks, mailCombo1, mailCombo2, mailCombo3;
@@ -26,13 +28,13 @@ public class CheckoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_checkout);
 
         final Context context = getApplicationContext();
-        continueBtn = (Button)findViewById(R.id.continueButton);
+        continueBtn = (ImageButton)findViewById(R.id.continueButton);
         payBtn = (Button)findViewById(R.id.checkoutButton);
-        eraseBtn = (Button)findViewById(R.id.eraseButton);
+        eraseBtn = (ImageButton)findViewById(R.id.eraseButton);
 
         ordenGohan = (TextView)findViewById(R.id.textOrden);
         costoGohan = (TextView)findViewById(R.id.textCostGohan);
-        totalOrden = (TextView)findViewById(R.id.textTotal);
+        //totalOrden = (TextView)findViewById(R.id.textTotal);
 
         //Recibir todas las ordenes
         SharedPreferences saveOrder = getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
@@ -106,8 +108,8 @@ public class CheckoutActivity extends AppCompatActivity {
         Integer ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras + costoGE + costoES + costoGS;
 
         //Impresion de elementos en la orden
-        costoGohan.setText("$" + extraCostoGohan.toString() + "\n$" + costoIExtras.toString()+ "\n$" + extraCostoSalad.toString() + "\n$" + extraBebidas.toString() + "\n$" + costoGE.toString() + "\n$" + costoES.toString() + "\n$" + costoGS.toString());
-        ordenGohan.setText(extraGohan + "\n" + textoIExtras +  "\n" + extraSalad + "\n" + textoBebidas  + "\n" + textoGE + "\n" + textoES + "\n" + textoGS + "\n" );
-        totalOrden.setText("$" + ordenTotal.toString());
+        costoGohan.setText("Precio\n" + "$" + extraCostoGohan.toString() + "\n$" + costoIExtras.toString()+ "\n$" + extraCostoSalad.toString() + "\n$" + extraBebidas.toString() + "\n$" + costoGE.toString() + "\n$" + costoES.toString() + "\n$" + costoGS.toString()  + "\n\n$" + ordenTotal.toString());
+        ordenGohan.setText("Orden\n" + extraGohan + "\n" + textoIExtras +  "\n" + extraSalad + "\n" + textoBebidas  + "\n" + textoGE + "\n" + textoES + "\n" + textoGS + "\n" );
+        //totalOrden.setText("$" + ordenTotal.toString());
     }
 }

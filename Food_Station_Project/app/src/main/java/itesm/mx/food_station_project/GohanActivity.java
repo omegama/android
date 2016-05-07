@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -102,7 +103,7 @@ public class GohanActivity extends AppCompatActivity {
 
 
 
-        Button backBtn = (Button) findViewById(R.id.backFood);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backFood);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +113,7 @@ public class GohanActivity extends AppCompatActivity {
         });
 
         //Boton para ir al checkout
-        Button totalBtn = (Button) findViewById(R.id.totalFood);
+        ImageButton totalBtn = (ImageButton) findViewById(R.id.totalFood);
         totalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

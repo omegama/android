@@ -258,16 +258,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <ImageButton
+                        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cancelar"
+                        android:src="@drawable/cancel_black"
+                        android:layout_marginRight="55dp"
                         android:id="@+id/buttonCancel" />
 
-                    <Button
+                    <ImageButton
+                        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Agregar"
+                        android:src="@drawable/add_cart"
                         android:id="@+id/buttonAdd" />
                 </LinearLayout>
             </LinearLayout>

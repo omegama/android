@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class CombosActivity extends FragmentActivity {
@@ -26,7 +27,7 @@ public class CombosActivity extends FragmentActivity {
         context = getApplicationContext();
 
 
-        Button backBtn = (Button) findViewById(R.id.backCombo);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backCombo);
         Button mitadGE = (Button)findViewById(R.id.buttonGE);
         Button mitadGS = (Button)findViewById(R.id.buttonGS);
         Button mitadES = (Button)findViewById(R.id.buttonES);

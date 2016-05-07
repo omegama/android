@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
         RadioButton quesoP, quesoM, pollo, surimi, atun, jamon, salchicha, crutones, frituras, cSandwich;
         CheckBox pepino, zana, acei, manz, pimi, jito, champi, jica, alfalfa, elote, nuez, aran;
         EditText clubSpec;
-        Button cancel, add;
+        ImageButton cancel, add;
         SharedPreferences sendCombo;
         SharedPreferences.Editor editor;
         String comboOrder, ordenMail = "";
@@ -62,8 +63,8 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
         cSandwich = (RadioButton)view.findViewById(R.id.radioClub);
         clubSpec = (EditText)view.findViewById(R.id.clubEspecificacion);
 
-        cancel = (Button)view.findViewById(R.id.buttonCancel);
-        add  = (Button)view.findViewById(R.id.buttonAdd);
+        cancel = (ImageButton)view.findViewById(R.id.buttonCancel);
+        add  = (ImageButton)view.findViewById(R.id.buttonAdd);
 
         cancel.setOnClickListener(this);
         add.setOnClickListener(new View.OnClickListener() {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,7 +33,7 @@ public class DrinksActivity extends AppCompatActivity {
         valleFrut = (Spinner)findViewById(R.id.spinnerValleFrut);
         power = (Spinner)findViewById(R.id.spinnerPower);
 
-        Button backBtn = (Button) findViewById(R.id.backDrink);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backDrink);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +41,7 @@ public class DrinksActivity extends AppCompatActivity {
                 startActivity(goToMenu);
             }
         });
-        final Button totalBtn = (Button) findViewById(R.id.totalDrink);
+        final ImageButton totalBtn = (ImageButton) findViewById(R.id.totalDrink);
         totalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
