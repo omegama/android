@@ -204,7 +204,7 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
                             editor = sendCombo.edit();
                             editor.putString("ESorden", comboOrder + "\n");
                             editor.putInt("EScosto", Integer.parseInt(String.valueOf(comboCost)));
-                            editor.putString("mailCombo3", ordenMail);
+                            editor.putString("mailCombo3","\n" + ordenMail);
                             editor.apply();
 
                             Toast.makeText(getActivity(),"Producto agregado", Toast.LENGTH_LONG).show();

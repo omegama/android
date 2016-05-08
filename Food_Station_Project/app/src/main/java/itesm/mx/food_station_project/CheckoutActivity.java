@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -21,7 +23,7 @@ public class CheckoutActivity extends AppCompatActivity {
     TextView ordenGohan, totalOrden, costoGohan;
     String extraGohan, extraSalad, textoBebidas, textoIExtras, textoGE, textoES, textoGS;
     String mailGohan, mailSalad, mailDrinks, mailCombo1, mailCombo2, mailCombo3;
-    Integer extraCostoGohan, extraCostoSalad, extraBebidas, costoIExtras, costoGE, costoES, costoGS;
+    Integer extraCostoGohan, extraCostoSalad, extraBebidas, costoIExtras, costoGE, costoES, costoGS, ordenTotal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +69,7 @@ public class CheckoutActivity extends AppCompatActivity {
         mailCombo2 = saveOrder.getString("mailCombo2", "");
         mailCombo3 = saveOrder.getString("mailCombo3", "");
 
-
+        final String fullOrderMail = mailGohan + mailSalad + mailDrinks + mailCombo1 + mailCombo2 + mailCombo3;
 
 
 
@@ -83,11 +85,27 @@ public class CheckoutActivity extends AppCompatActivity {
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Enviar a la API de paypal para realizar pago
 
+                if(fullOrderMail.matches("")){
+                    Toast.makeText(context, "Su orden no tiene elementos", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent sendOrder = new Intent(Intent.ACTION_SEND);
+                    sendOrder.setData(Uri.parse("mailto:"));
+                    String to[] = {"food.station.qro@gmail.com"};
+                    sendOrder.putExtra(Intent.EXTRA_EMAIL, to);
+                    sendOrder.putExtra(Intent.EXTRA_SUBJECT, "Nueva orden");
+                    sendOrder.putExtra(Intent.EXTRA_TEXT, fullOrderMail + "\nTotal pagado: $" + ordenTotal.toString());
+                    sendOrder.setType("message/rfc822");
+                    startActivity(Intent.createChooser(sendOrder, "Send email"));
+                    context.getSharedPreferences("orderInfo", 0).edit().clear().commit();
+                }
+                /*
                 //Limpia la orden al ir a PayPal chanse esto no es necesario aun, no se como funcione el mail
+                Intent goToMenu = new Intent(CheckoutActivity.this, MenuActivity.class);
                 context.getSharedPreferences("orderInfo", 0).edit().clear().commit();
-                Toast.makeText(context, "Gracias por su compra", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Gracias por hacer su pedido", Toast.LENGTH_LONG).show();
+                startActivity(goToMenu);
+                */
 
             }
         });
@@ -96,16 +114,21 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent eraseOrder = new Intent(CheckoutActivity.this, MenuActivity.class);
-                //Limpiar la orden
-                context.getSharedPreferences("orderInfo", 0).edit().clear().commit();
-                Toast.makeText(context, "Se ha borrado su orden", Toast.LENGTH_LONG).show();
-                startActivity(eraseOrder);
 
+                if(fullOrderMail.matches("")){
+                    Toast.makeText(context, "No existe orden para borrar", Toast.LENGTH_LONG).show();
+                    startActivity(eraseOrder);
+                }else {
+                    //Limpiar la orden
+                    context.getSharedPreferences("orderInfo", 0).edit().clear().commit();
+                    Toast.makeText(context, "Se ha borrado su orden", Toast.LENGTH_LONG).show();
+                    startActivity(eraseOrder);
+                }
             }
         });
 
         //Calculo del total de la orden
-        Integer ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras + costoGE + costoES + costoGS;
+         ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras + costoGE + costoES + costoGS;
               //
 
         String costoGohanCambio = extraCostoGohan.toString();
@@ -162,7 +185,7 @@ public class CheckoutActivity extends AppCompatActivity {
         //Impresion de elementos en la orden
         costoGohan.setText("Precio\n\n" +  costoGohanCambio + extrasCambio + costoSalad + cambioBebida + combo1Cambio + combo2Cambio + combo3Cambio + "\n$" + ordenTotal.toString());
                 //+  costoIExtras.toString() + extraCostoSalad.toString()+ extraBebidas.toString()  + costoGE.toString() + costoES.toString()  + costoGS.toString()  + "\n\n$" + ordenTotal.toString());
-        ordenGohan.setText("Orden\n\n" + extraGohan + textoIExtras + extraSalad + textoBebidas + textoGE + textoGS +  textoES + "\n" + "Total" + "\n" );
+        ordenGohan.setText("Orden\n\n" + extraGohan + textoIExtras + extraSalad + textoBebidas + textoGE + textoGS +  textoES + "\n"  + "Total" + "\n" );
         //totalOrden.setText("$" + ordenTotal.toString());
     }
 }

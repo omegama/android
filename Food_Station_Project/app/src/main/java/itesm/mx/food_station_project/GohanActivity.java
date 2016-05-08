@@ -148,58 +148,58 @@ public class GohanActivity extends AppCompatActivity {
                     if(quesoC.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Queso crema extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(chipotle.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Chipotle extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(aguacate.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Aguacate extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(pepino.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Pepino extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(teriyakiCheck.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Salsa teriyaki extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(noriCheck.isChecked() == true){
                         costoIExtras +=5;
                         ordenMail += "Nori extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
 
                     if(surimi.isChecked() == true){
                         costoIExtras +=8;
                         ordenMail += "Surimi extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(californiaCheck.isChecked() == true){
                         costoIExtras +=8;
                         ordenMail += "California extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(tampicoCheck.isChecked() == true){
                         costoIExtras +=8;
                         ordenMail += "Tampico extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(pollo.isChecked() == true){
                         costoIExtras +=8;
                         ordenMail += "Pollo extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
                     if(atun.isChecked() == true){
                         costoIExtras +=8;
                         ordenMail += "Atún extra\n";
-                        ordenExtra = "I. Extras";
+                        ordenExtra = "I. Extras\n";
                     }
 
 
@@ -209,7 +209,7 @@ public class GohanActivity extends AppCompatActivity {
                     editor.putString("saveOrder", ordenGohan + "\n");
                     editor.putInt("saveCost", Integer.parseInt(String.valueOf(costoGohan)));
 
-                    editor.putString("saveIngredients", ordenExtra + "\n");
+                    editor.putString("saveIngredients", ordenExtra);
                     editor.putInt("saveIngredientsCost", Integer.parseInt(String.valueOf(costoIExtras)));
                     //Aqui se manda la orden para el mail al checkout
                     editor.putString("saveMailGohan", ordenMail);

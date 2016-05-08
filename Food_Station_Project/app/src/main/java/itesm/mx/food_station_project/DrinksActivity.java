@@ -114,7 +114,7 @@ public class DrinksActivity extends AppCompatActivity {
 
                 editor.putInt("saveDrinks", Integer.parseInt(String.valueOf(totalDrink)));
                 editor.putString("saveTextDrinks", "Bebidas\n");
-                editor.putString("saveMailDrinks", orderMail);
+                editor.putString("saveMailDrinks", "\n" + orderMail);
                 editor.apply();
 
                 Toast.makeText(DrinksActivity.this, "Producto agregado", Toast.LENGTH_LONG).show();

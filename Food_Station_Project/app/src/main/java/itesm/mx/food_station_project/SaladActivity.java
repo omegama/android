@@ -266,11 +266,12 @@ public class SaladActivity extends AppCompatActivity {
                     if(med.isChecked() == true){
                         ordenEnsalada += "Ensalada mediana";
                         precioEnsalada += 35;
-                        ordenMail += "Ensalada mediana\n";
+                        ordenMail += "\nEnsalada mediana\n";
                     }
                     if(grande.isChecked() == true){
                         ordenEnsalada += "Ensalada grande";
                         precioEnsalada += 48;
+                        ordenMail += "\nEnsalada grande\n";
                     }
 
                     //Tomar el tipo de proteina que se selecciono para el mail

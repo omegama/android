@@ -57,19 +57,19 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
 
 
                 if(tampicoR.isChecked() == true){
-                    orderMail += "Mitad gohan tampico\n\n";
+                    orderMail += "Mitad gohan tampico\n";
                 }
                 if(caliR.isChecked() == true){
-                    orderMail += "Mitad gohan california\n\n";
+                    orderMail += "Mitad gohan california\n";
                 }
                 if(noriR.isChecked() == true){
-                    orderMail += "Mitad gohan nori\n\n";
+                    orderMail += "Mitad gohan nori\n";
                 }
                 if(teriR.isChecked() == true){
-                    orderMail += "Mitad gohan teriyaki\n\n";
+                    orderMail += "Mitad gohan teriyaki\n";
                 }
                 if(verdeR.isChecked() == true){
-                    orderMail += "Mitad gohan verde\n\n";
+                    orderMail += "Mitad gohan verde\n";
                 }
                 if(clubR.isChecked() == true){
                     orderMail += "Mitad Club Sandwich\n";
@@ -77,7 +77,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
                 if(clubSpec.getText().toString().matches("")){
                     //No hay especificaciones para el gohan
                 } else {
-                    orderMail += "Especificaciones: " + clubSpec.getText().toString() + "\n";
+                    orderMail += "Especificaciones: " + clubSpec.getText().toString() + "\n\n";
                 }
 
                 comboOrder = "Mitad gohan - club";
@@ -86,7 +86,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
                 editor = sendCombo.edit();
                 editor.putString("GSorden", comboOrder + "\n");
                 editor.putInt("GScosto", Integer.parseInt(String.valueOf(comboCost)));
-                editor.putString("mailCombo2", orderMail);
+                editor.putString("mailCombo2", "\n" + orderMail);
                 editor.apply();
 
                 Toast.makeText(getActivity(),"Producto agregado", Toast.LENGTH_LONG).show();
