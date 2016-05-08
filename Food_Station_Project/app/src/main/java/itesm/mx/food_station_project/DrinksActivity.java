@@ -112,8 +112,8 @@ public class DrinksActivity extends AppCompatActivity {
                     return;
                 }
 
-                editor.putString("saveDrinks", String.valueOf(totalDrink));
-                editor.putString("saveTextDrinks", "Bebidas");
+                editor.putInt("saveDrinks", Integer.parseInt(String.valueOf(totalDrink)));
+                editor.putString("saveTextDrinks", "Bebidas\n");
                 editor.putString("saveMailDrinks", orderMail);
                 editor.apply();
 

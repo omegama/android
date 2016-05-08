@@ -31,10 +31,14 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
         SharedPreferences.Editor editor;
         String comboOrder, ordenMail = "";
         Integer comboCost;
+        Activity mactivity;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
         View view = inflater.inflate(R.layout.activity_mitad_es, null);
+        //super(activity);
+
+
 
 
         quesoP= (RadioButton)view.findViewById(R.id.radioPanela);
@@ -115,6 +119,7 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
                     if(acumBarraFria == 4) {
                         if(crutones.isChecked() == true || frituras.isChecked() == true){
                             Intent goToCheckout = new Intent(getContext(), CheckoutActivity.class);
+
 
                             ordenMail = "Mitad Ensalada\n";
                             //Ensalada para mail
@@ -197,8 +202,8 @@ public class MitadESActivity extends DialogFragment implements View.OnClickListe
                             comboCost = 50;
                             sendCombo = getActivity().getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
                             editor = sendCombo.edit();
-                            editor.putString("ESorden", comboOrder);
-                            editor.putString("EScosto", String.valueOf(comboCost));
+                            editor.putString("ESorden", comboOrder + "\n");
+                            editor.putInt("EScosto", Integer.parseInt(String.valueOf(comboCost)));
                             editor.putString("mailCombo3", ordenMail);
                             editor.apply();
 

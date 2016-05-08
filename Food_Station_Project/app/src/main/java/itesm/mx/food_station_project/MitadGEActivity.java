@@ -213,8 +213,8 @@ public class MitadGEActivity extends DialogFragment implements View.OnClickListe
                                 comboCost = 50;
                                 sendCombo = getActivity().getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
                                 editor = sendCombo.edit();
-                                editor.putString("GEorden", comboOrder);
-                                editor.putString("GEcosto", String.valueOf(comboCost));
+                                editor.putString("GEorden", comboOrder + "\n");
+                                editor.putInt("GEcosto", Integer.parseInt(String.valueOf(comboCost)));
                                 editor.putString("mailCombo1", ordenMail);
                                 editor.apply();
                                 Toast.makeText(getActivity(), "Producto agregado", Toast.LENGTH_LONG).show();

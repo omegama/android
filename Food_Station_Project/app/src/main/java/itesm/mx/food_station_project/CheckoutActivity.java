@@ -40,24 +40,24 @@ public class CheckoutActivity extends AppCompatActivity {
         SharedPreferences saveOrder = getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
 
         extraGohan = saveOrder.getString("saveOrder", "");
-        extraCostoGohan = Integer.parseInt(saveOrder.getString("saveCost", "0"));
+        extraCostoGohan = (saveOrder.getInt("saveCost", 0));
         textoIExtras = saveOrder.getString("saveIngredients", "");
-        costoIExtras = Integer.parseInt(saveOrder.getString("saveIngredientsCost", "0"));
+        costoIExtras = (saveOrder.getInt("saveIngredientsCost", 0));
 
-        extraBebidas = Integer.parseInt(saveOrder.getString("saveDrinks", "0"));
+        extraBebidas = (saveOrder.getInt("saveDrinks", 0));
         textoBebidas = saveOrder.getString("saveTextDrinks", "");
 
         extraSalad = saveOrder.getString("saveOrderSalad", "");
-        extraCostoSalad = Integer.parseInt(saveOrder.getString("saveCostSalad", "0"));
+        extraCostoSalad = (saveOrder.getInt("saveCostSalad", 0));
 
         textoGE = saveOrder.getString("GEorden", "");
-        costoGE = Integer.parseInt(saveOrder.getString("GEcosto", "0"));
+        costoGE = (saveOrder.getInt("GEcosto", 0));
 
         textoES = saveOrder.getString("ESorden", "");
-        costoES = Integer.parseInt(saveOrder.getString("EScosto", "0"));
+        costoES = (saveOrder.getInt("EScosto", 0));
 
         textoGS = saveOrder.getString("GSorden", "");
-        costoGS = Integer.parseInt(saveOrder.getString("GScosto", "0"));
+        costoGS = (saveOrder.getInt("GScosto", 0));
 
         //AQUI RECIBE LAS ORDENES PARA EL MAIL...
         mailGohan = saveOrder.getString("saveMailGohan", "");
@@ -106,10 +106,63 @@ public class CheckoutActivity extends AppCompatActivity {
 
         //Calculo del total de la orden
         Integer ordenTotal = extraCostoGohan + extraCostoSalad + extraBebidas + costoIExtras + costoGE + costoES + costoGS;
+              //
+
+        String costoGohanCambio = extraCostoGohan.toString();
+        String extrasCambio = costoIExtras.toString();
+        String costoSalad = extraCostoSalad.toString();
+        String cambioBebida = extraBebidas.toString();
+        String combo1Cambio = costoGE.toString();
+        String combo2Cambio = costoGS.toString();
+        String combo3Cambio = costoES.toString();
+
+        if (costoGohanCambio.matches("0")){
+            costoGohanCambio = "";
+        } else {
+            costoGohanCambio = "$" +  extraCostoGohan.toString() + "\n";
+
+        }
+
+        if(extrasCambio.matches("0")){
+            extrasCambio = "";
+        } else {
+            extrasCambio = "$" +  costoIExtras.toString() + "\n";
+        }
+
+        if (costoSalad.matches("0")){
+            costoSalad = "";
+        } else {
+            costoSalad = "$" + extraCostoSalad.toString() + "\n";
+        }
+
+        if (cambioBebida.matches("0")){
+            cambioBebida = "";
+        } else {
+            cambioBebida = "$" + extraBebidas.toString() + "\n";
+        }
+
+        if (combo1Cambio.matches("0")){
+                combo1Cambio = "";
+        } else {
+            combo1Cambio = "$" + costoGE.toString() + "\n";
+        }
+
+        if (combo2Cambio.matches("0")){
+            combo2Cambio = "";
+        } else {
+            combo2Cambio = "$" + costoGS.toString() + "\n";
+        }
+
+        if (combo3Cambio.matches("0")){
+            combo3Cambio = "";
+        } else {
+            combo3Cambio = "$" + costoES.toString() + "\n";
+        }
 
         //Impresion de elementos en la orden
-        costoGohan.setText("Precio\n" + "$" + extraCostoGohan.toString() + "\n$" + costoIExtras.toString()+ "\n$" + extraCostoSalad.toString() + "\n$" + extraBebidas.toString() + "\n$" + costoGE.toString() + "\n$" + costoES.toString() + "\n$" + costoGS.toString()  + "\n\n$" + ordenTotal.toString());
-        ordenGohan.setText("Orden\n" + extraGohan + "\n" + textoIExtras +  "\n" + extraSalad + "\n" + textoBebidas  + "\n" + textoGE + "\n" + textoES + "\n" + textoGS + "\n" );
+        costoGohan.setText("Precio\n\n" +  costoGohanCambio + extrasCambio + costoSalad + cambioBebida + combo1Cambio + combo2Cambio + combo3Cambio + "\n$" + ordenTotal.toString());
+                //+  costoIExtras.toString() + extraCostoSalad.toString()+ extraBebidas.toString()  + costoGE.toString() + costoES.toString()  + costoGS.toString()  + "\n\n$" + ordenTotal.toString());
+        ordenGohan.setText("Orden\n\n" + extraGohan + textoIExtras + extraSalad + textoBebidas + textoGE + textoGS +  textoES + "\n" + "Total" + "\n" );
         //totalOrden.setText("$" + ordenTotal.toString());
     }
 }

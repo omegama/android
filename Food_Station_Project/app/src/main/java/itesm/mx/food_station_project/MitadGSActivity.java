@@ -84,8 +84,8 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
                 comboCost = 50;
                 sendCombo = getActivity().getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
                 editor = sendCombo.edit();
-                editor.putString("GSorden", comboOrder);
-                editor.putString("GScosto", String.valueOf(comboCost));
+                editor.putString("GSorden", comboOrder + "\n");
+                editor.putInt("GScosto", Integer.parseInt(String.valueOf(comboCost)));
                 editor.putString("mailCombo2", orderMail);
                 editor.apply();
 

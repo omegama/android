@@ -344,8 +344,8 @@ public class SaladActivity extends AppCompatActivity {
 
                          SharedPreferences saveOrder = getSharedPreferences("orderInfo", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = saveOrder.edit();
-                         editor.putString("saveOrderSalad", ordenEnsalada);
-                         editor.putString("saveCostSalad", String.valueOf(precioEnsalada));
+                         editor.putString("saveOrderSalad", ordenEnsalada + "\n");
+                         editor.putInt("saveCostSalad", Integer.parseInt(String.valueOf(precioEnsalada)));
                             //Aqui se guarda globalmente la orden para el mail
                          editor.putString("saveMailSalad", ordenMail);
                          editor.apply();

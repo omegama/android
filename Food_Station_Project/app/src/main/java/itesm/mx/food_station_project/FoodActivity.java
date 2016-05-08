@@ -1,5 +1,6 @@
 package itesm.mx.food_station_project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +11,13 @@ import android.widget.ImageButton;
 
 public class FoodActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
+
+       final Context context = getApplicationContext();
 
         ImageButton backBtn = (ImageButton) findViewById(R.id.backFood);
         backBtn.setOnClickListener(new View.OnClickListener() {
