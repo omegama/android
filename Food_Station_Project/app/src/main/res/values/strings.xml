@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Food Station</string>
+    <color name="blue">#CEDEF4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+
+    <style name="horizontalPadding">
+        <item name="android:layout_marginRight">100dp</item>
+    </style>
+
+    <style name="verticalPadding">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <string-array name="spinnerCantidad">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+
+</resources>
